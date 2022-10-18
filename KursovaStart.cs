@@ -6,31 +6,28 @@ namespace KursovProekt
     {
         static void Main(string[] args)
         {
-            //double health = 100;
-            //string weapon = Console.ReadLine();
-            double allDamage = 0;
-            double allDamage2 = 0;
-            Hero items = new Hero();
-            //items.LevelUp();
-            //items.LevelUp();
-            //items.LevelUp();
-            //items.LevelUp();
+            Hero Marin = new Hero("Xiao", Fraction.Knight);
+            Hero Emir = new Hero("Ganyu", Fraction.Ranged);
+            Marin.LevelUp();
+            Marin.LevelUp();
+            Marin.LevelUp();
+            Marin.LevelUp();
+            Emir.LevelUp();
+            Emir.LevelUp();
             
-            double predmet1 = items.pokazatel(allDamage);
-            items.Level = 57;
-            
-                  double obshto = items.GetAttack(allDamage2);
-            obshto = items.LevelUp();
-            obshto = items.LevelUp();
-            obshto = items.LevelUp();
+            Emir.Fraction = Fraction.Rogue;
+            Item sword1 = new Item("sword", 5, 5);
+            Item sword = new Item("bow", 15, 15);
+            Item sword2 = new Item("sword", 234, 5);
+            Item sword3 = new Item("sword", 2352, 5);
 
-            Console.WriteLine($"Attack1: {predmet1}");
-                  Console.WriteLine($"Attack2: {obshto}");
-            //bronq1
-            //bronq2
-            //bronq3
-            //bronq4
-            //bow
+
+            Console.WriteLine("Attack: " + sword.Attack + "\nDefence: " + sword.Defence);
+            Console.WriteLine();
+            Console.WriteLine($"\tPlayer1\nLevel: {Marin.Level},\nName: {Marin.Name},\nHealth: {Marin.Health},\nMana: {Marin.Mana},\nStamina: {Marin.Stamina},\nFraction: {Marin.Fraction},\n {Marin.GetAttack()}");
+            Console.WriteLine();
+            Console.WriteLine($"\tPlayer2\nLevel: {Emir.Level},\nName: {Emir.Name},\nHealth: {Emir.Health},\nMana: {Emir.Mana},\nStamina: {Emir.Stamina},\nFraction: {Emir.Fraction},\n {Emir.GetAttack()}");
+
         }
     }
 }
